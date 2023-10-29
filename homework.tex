@@ -1,0 +1,48 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs, geometry, booktabs, threeparttable, multirow, diagbox, array, placeins, enumerate, mathtools}
+
+\title{\textbf{最优化方法第二次作业}}
+\author{王天柱}
+\date{\today}
+\linespread{1.1}
+\geometry{a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{Problem\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{Solution:}}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+    \textbf{带$l_{2}$惩罚的部分优化问题}
+
+    考虑问题
+    \begin{equation} \label{con:target}
+    \min_{\beta, \sigma \geq 0} f(\beta) + \frac{\lambda}{2}\sum_{i=1}^{n} g(\beta_{i}, \sigma_{i})
+    \end{equation}
+    其中$f$为定义在$\mathbb{R}^{n}$上的凸函数，$\lambda \geq 0$，且
+
+    \begin{equation} \nonumber
+        g(x, y) = \left\{
+                \begin{array}{ll}  % 这里使用ll表示左对齐
+                    \dfrac{x^2}{y} + y \qquad \mbox{if y > 0} \\
+                    0 \qquad \mbox{if x=0, y=0} \\
+                    \infty \qquad \mbox{else.}
+                \end{array}
+            \right.
+    \end{equation}
+    \begin{enumerate}[1.]
+        \item 证明$g$是凸函数，即上述问题是凸优化问题
+        \item 证明：$$\min_{y \geq 0} g(x, y) = 2 \lvert x \rvert$$
+        \item 证明\eqref{con:target}中对于$\sigma \geq 0$的优化可得$l_{1}$惩罚问题：$$\min_{\beta} f(\beta) + \lambda \lVert \beta \rVert _{1}$$
+    \end{enumerate}
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+\end{document}
